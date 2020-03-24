@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        body{
+            background-image: url(Images/spotlight-temple-university.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+        }
+             #idDivCenter{
+                 text-align:center;
+                  padding-top:40px;
+                
+             }
+             #idDivCenter2{
+                 text-align:left;
+                 padding-left:25px;
+                
+
+             }
+        #idDivEverything{
+            background-color:white;
+            background-size:auto;
+            height:450px;
+            width:450px;
+            position:relative;
+            left: 430px;
+            top: 50px;
+            
+        }
+        #idinstru{
+            font-size:15px;
+            font-family:'Times New Roman';
+        }
+        #lblName{
+            font-weight:bold;
+             font-family:'Times New Roman';
+             font-size:15px;
+        }
+        #lblPass{
+            font-weight:bold;
+            font-family:'Times New Roman';
+            font-size:15px;
+        }
+        #btnLogin{
+            font-family: 'Times New Roman';
+            background-color: red;
+            color:black;
+            font-weight:bold;
+            font-size:15px;
+        }
+        #idUsername{
+            font-size:20px;
+        }
+          #idPassword{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="idDivEverything">
+    <div id="idDivCenter">
+
+        <img src="Images/temple_201_4c-logo.jpg" width="250"/>
+    </div>
+    <div id="idDivCenter2">
+        <br />
+        <br />
+        <p id="idinstru">Login with your TU Username and Password</p>
+        <label id="lblName">Username</label><br /><br />
+        <input id="idUsername" type="text" required>
+        <br />
+        <br />
+        <label id="lblPass">Password</label><br /><br />
+        <input id="idPassword" type="password" required>
+        <br />
+        <br />
+        <button id="btnLogin" type="button" onclick="myFunction()">Login</button>
+        <br />
+        <p id="idPara"></p>
+    </div>
+        <script>
+function myFunction() {
+    var getUsername = document.getElementById("idUsername").value
+    var getPassword = document.getElementById("idPassword").value
+
+    if(getUsername == ""){
+        text = "Please enter a username!!!"
+    } else if (getPassword == "") {
+        text = "Please enter a password!!!"
+    } else if (getUsername == "" && getPassword == "") {
+      text = "Please enter both username and password to login!!!"
+  }
+  else if (getUsername == "tuk12345" && getPassword == "Temple12345") {
+      window.location.href = "Student.aspx";
+    }
+    else if (getUsername == "admin" && getPassword == "admin") {
+        window.location.href = "Admin.aspx";
+    }
+    else if ((getUsername != "tuk12345" && getPassword != "Temple12345") || (getUsername != "admin" && getPassword != "admin")) {
+        text = "username and/or password is invalid!!!"
+    }
+  document.getElementById("idPara").innerHTML = text;
+     
+}
+        </script>
+           </div>
+  
+      
+</body>
+</html>
